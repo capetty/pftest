@@ -86,12 +86,32 @@ export default {
   methods:{
     toggleShowFront(row, index){
       if(row == 1){
+        if(this.selectedCardRow1 !=null){
+          if(this.selectedCardRow1 == index){
+            this.selectedCardRow1 = null;
+          }
+          else{
+            this.selectedCardRow1 = index;
+          }
+        }
+        else{
           this.selectedCardRow1 = index;
           this.selectedCardRow2 = null;
+        }
       }
       else{
+        if(this.selectedCardRow2 != null){
+          if(this.selectedCardRow2 == index){
+            this.selectedCardRow2 = null;
+          }
+          else{
+            this.selectedCardRow2 = index;
+          }
+        }
+        else{
           this.selectedCardRow2 = index;
           this.selectedCardRow1 = null;
+        }
       }
     }
   }
